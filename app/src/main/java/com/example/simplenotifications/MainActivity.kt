@@ -69,4 +69,22 @@ class MainActivity : AppCompatActivity() {
         manager.notify(R.id.SIMPLE_NOTIFICATION_ID, builder.build())
 
     }
+
+    fun askPermission(): Boolean {
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+            1
+        )
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+
+    }
 }
